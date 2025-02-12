@@ -1,0 +1,15 @@
+{
+  "name": "api-extractor-bundler",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && npm run build:bundler > ./dist/diag-from-bundler.txt && npm run build:node > ./dist/diag-from-node.txt && npm run build:node16 > ./dist/diag-from-node16.txt",
+    "build:bundler": "tsc -p ./api-extractor/bundler/tsconfig.bundler.json && api-extractor run --local --verbose -c ./api-extractor/bundler/api-extractor.bundler.jsonc --diagnostics",
+    "build:node": "tsc -p ./api-extractor/node/tsconfig.node.json && api-extractor run --local --verbose -c ./api-extractor/node/api-extractor.node.jsonc --diagnostics",
+    "build:node16": "tsc -p ./api-extractor/node16/tsconfig.node16.json && api-extractor run --local --verbose -c ./api-extractor/node16/api-extractor.node16.jsonc --diagnostics"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "7.49.2"
+  }
+}

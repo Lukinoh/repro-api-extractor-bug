@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "Node16",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node16",
+    "declaration": true,
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+
+    /* Linting */
+    "strict": true,
+    "outDir": "../../dist/node16"
+  },
+  "include": ["../../src"]
+}
